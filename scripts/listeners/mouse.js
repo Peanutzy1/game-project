@@ -1,3 +1,4 @@
+"use strict"
 import { vars } from "../vars.js";
 
 export const mouse = {

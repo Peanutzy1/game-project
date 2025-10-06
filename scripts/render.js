@@ -1,3 +1,4 @@
+"use strict"
 import { vars } from "./vars.js"
 
 export const renderer = {
@@ -8,11 +9,10 @@ export const renderer = {
     ctx.translate(window.innerWidth / 2, window.innerHeight / 2);
     ctx.scale(vars.world.scale, vars.world.scale);
     ctx.translate(vars.camera.x, vars.camera.y); 
-    // TODO: draw trees and connectors
+    
   },
 
-  drawLoop: () => {
-    renderer.draw();
-    requestAnimationFrame(renderer.drawLoop);
-  }
+  drawTree(tree) {
+    tree.draw()
+  },
 }

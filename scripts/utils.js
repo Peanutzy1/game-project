@@ -1,3 +1,4 @@
+"use strict"
 import { vars } from "../vars.js"
 
 export const utils = {
@@ -28,7 +29,7 @@ export const utils = {
       pY <= y + h / 2
     },
   
-  inViewPort: (x, y) => {
+  inViewport: (x, y) => {
     return utils.inRect(
       vars.world.camera.x,
       vars.world.camera.y,
@@ -37,5 +38,19 @@ export const utils = {
       x, 
       y
     );
+  },
+
+  makeRenderPoints: (x, y, w, h, pad) => {
+    return [
+      {x: x + w / 2 + pad, y: y + h / 2 + pad},
+      {x: x - w / 2 - pad, y: y + h / 2 + pad},
+      {x: x - w / 2 - pad, y: y - h / 2 - pad},
+      {x: x + w / 2 + pad, y: y - h / 2 - pad},
+    ]
+  },
+
+  rectInViewport: (x, y, w, h , pad) => {
+    const rPoints = utils.makeRenderPoints(x, y, w, h, pad);
+    return rPoints.some(e => utils.inViewport(e.x, e.y));
   }
 };
