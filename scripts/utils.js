@@ -19,5 +19,23 @@ export const utils = {
              
       return {x: cX, y: cY};
     };
+  },
+
+  inRect: (x, y, w, h, pX, pY) => {
+    return pX >= x - w / 2 &&
+      pX <= x + w / 2 &&
+      pY >= y - h / 2 &&
+      pY <= y + h / 2
+    },
+  
+  inViewPort: (x, y) => {
+    return utils.inRect(
+      vars.world.camera.x,
+      vars.world.camera.y,
+      window.innerWidth, 
+      window.innerHeight, 
+      x, 
+      y
+    );
   }
 };

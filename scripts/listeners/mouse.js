@@ -21,11 +21,11 @@ export const mouse = {
       lastX = e.clientX;
       lastY = e.clientY;
       //TODO: initialize button searching
-    }),
+    });
 
     window.addEventListener("mouseup", () => {
       mouseDown = false;
-    }),
+    });
 
     vars.canvas.addEventListener("wheel", e => {
       e.preventDefault();
