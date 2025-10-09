@@ -1,11 +1,14 @@
-"use strict"
-import { mouse } from "./listeners/mouse.js"
-import * as ExListeners from "./listeners/other.js"
-import { renderer } from "./render.js"
-import { utils } from "./utils.js"
-import { tree, node } from "./gameplay/objects.js"
-import { points } from "./gameplay/points.js"
-import { vars } from "./vars.js"
+'use strict';
+/* eslint-env node */
+/* eslint-disable no-unused-vars */
+
+import { mouse } from './listeners/mouse.js';
+import * as ExListeners from './listeners/other.js';
+import { renderer } from './render.js';
+import { utils } from './utils.js';
+import { tree, node } from './gameplay/objects.js';
+import { points } from './gameplay/points.js';
+import { vars } from './vars.js';
 
 function start() {
   requestAnimationFrame(gameLoop);
@@ -20,9 +23,11 @@ function gameLoop(tick) {
   
   points.update();
   renderer.draw();
-  renderer.drawTree(vars.trees.pointTree.construct);
+  vars.trees.pointTree.draw();
 
   requestAnimationFrame(gameLoop);
 }
 
 start();
+
+console.log(vars.trees.pointTree);

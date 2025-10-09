@@ -1,5 +1,5 @@
-"use strict"
-import { vars } from "./vars.js"
+'use strict';
+import { vars } from './vars.js';
 
 export const renderer = {
   draw: () => {
@@ -9,10 +9,10 @@ export const renderer = {
     ctx.translate(window.innerWidth / 2, window.innerHeight / 2);
     ctx.scale(vars.world.scale, vars.world.scale);
     ctx.translate(vars.camera.x, vars.camera.y); 
-    
+    ctx.beginPath();
   },
 
   drawTree(tree) {
-    tree.draw()
+    tree.draw();
   },
-}
+};

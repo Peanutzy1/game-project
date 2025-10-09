@@ -1,5 +1,5 @@
-"use strict"
-import { vars } from "../vars.js"
+'use strict';
+import { vars } from '../vars.js';
 
 export const points = {
   update: (deltaTime) => {
@@ -9,11 +9,11 @@ export const points = {
   point: {
     total: 0,
     mult: 0,
-    add: (n) => { points.point.total += n },
+    add: (n) => { points.point.total += n; },
     update: (deltaTime) => {
       if (vars.world.gainPoints) {
-        this.add(deltaTime * points.point.mult)
+        this.add(deltaTime * points.point.mult);
       }
     }
   }
-}
+};
